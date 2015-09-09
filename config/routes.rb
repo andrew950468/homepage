@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get 'michael' => 'page#mike' 
+	root 'posts#new'
+	resources :posts 
 end
+
