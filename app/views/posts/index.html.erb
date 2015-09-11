@@ -1,0 +1,5 @@
+<h1> All the photos are here</h1>
+<% @posts.each do |post| %>
+	<p class='title'>Title: <%= post.title %></p></br>
+	<p id= "image"><%= image_tag post.image.url %></p>
+<% end %>

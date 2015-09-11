@@ -1,0 +1,39 @@
+body{
+	background-color: #ecf0f1;
+	color:#3498db;
+	text-align: center;
+}
+
+.heading{
+	text-align: center;
+	font-family: Courier, Monaco, monospace;
+}
+
+.title{
+	text-align: center;
+	font-family: Courier, Monaco, monospace;
+	border: 3px solid #bdc3c7;
+	box-shadow: 1px 1px 3px #4C4843;
+	border-width: 4px;
+	border-color:##34495e;
+	font-style:italic;
+}
+
+#image{
+	position: relative;
+
+}
+
+
+p.button {
+  background: transparent url('bg_button_a.gif') no-repeat scroll top right;
+  position: relative
+  color: #444;
+  display: block;
+  float: left;
+  font: normal 12px arial, sans-serif;
+  height: 24px;
+  margin-right: 6px;
+  padding-right: 18px; /* sliding doors padding */
+  text-decoration: none;
+}

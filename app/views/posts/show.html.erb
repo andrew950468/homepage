@@ -1,2 +1,10 @@
-<%= image_tag @post.image.url %>
-<%= puts "kkkkkkkkkkkkkkkkkk",@post.image.url %>
+<head>
+
+</head>
+
+<body>
+	<h1 class="heading"> Here's the photo you uploaded </h1>
+	<h2 class="title">Title: <%= @post.title %></h2>
+	<p id= "image"><%= image_tag @post.image.url %></p>
+	<p><%= button_to "See All Photos", posts_path, :method => "get" %></p>
+</body>
