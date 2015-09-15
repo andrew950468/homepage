@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, :only => [:show, :edit, :update]
+  before_action :set_post, :only => [:show, :edit, :update, :destroy]
 
  	def index
  		@posts = Post.all
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     end
   end
 
-    def update
+  def update
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -40,6 +40,11 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
 
