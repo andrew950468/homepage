@@ -1,4 +1,15 @@
 Rails.application.configure do
+  ActionMailer::Base.smtp_settings = {
+      :port           => 587,
+      :address        => 'smtp.mailgun.org', 
+      :user_name      => 'what_to_wear@puanyang.com',
+      :password       => '123456',
+      :domain         => 'puanyang.com',
+      :authentication => :plain,
+  }
+  
+  ActionMailer::Base.delivery_method = :smtp
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Settings specified here will take precedence over those in config/application.rb.
 
