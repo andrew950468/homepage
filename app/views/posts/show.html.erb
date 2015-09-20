@@ -1,10 +1,11 @@
 <head>
-
+	<script src= "timers.js"></script>
 </head>
 
 <body>
-	<h1 class="heading"> Here's the photo you uploaded </h1>
+	<h1 class="heading"> This is how you look! </h1>
 	<h2 class="title">Title: <%= @post.title %></h2>
 	<p id= "image"><%= image_tag @post.image.url %></p>
+	<div>Get feedback in <span id="time"></span> seconds!</div>
 	<p><%= button_to "See All Photos", posts_path, :method => "get" %></p>
 </body>
