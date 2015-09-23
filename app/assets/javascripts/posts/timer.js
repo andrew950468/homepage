@@ -26,8 +26,9 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
+
 jQuery(function ($) {
     var oneMinutes = 60,
-        display = $('#time');
+        display = $("#time");
     startTimer(oneMinutes, display);
 });

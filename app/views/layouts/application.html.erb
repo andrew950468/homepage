@@ -10,6 +10,9 @@
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <li>
+  <%= link_to('comment_page', "/" )  %>
+  </li>
 <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
@@ -19,6 +22,9 @@
   <%= link_to('Login', new_user_session_path)  %>  
   </li>
 <% end %>
+  <li>
+  <%= link_to('personal_Page',{controller: '/user', action: 'index'} )  %>
+  </li>
 <%= yield %>
 
 </body>
