@@ -6,13 +6,13 @@ $(document).ready(function(){
                      post_id: $(this).attr("value")}
         },
         function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
+            //alert("post Data: " + data + "\nStatus: " + status);
             $.post("/posts/buyCount",
             {
               comment: { post_id: data}
             },
             function(data,status){
-                alert("buy: " + JSON.parse(data)["post_id"] + "\nStatus: " + status);
+                //alert("get data buy: " + JSON.parse(data)["post_id"] + "\nStatus: " + status);
                 data_array = JSON.parse(data);
                 post_id = data_array["post_id"]
                 buy = data_array["buy"]

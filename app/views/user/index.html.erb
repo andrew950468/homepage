@@ -1,7 +1,12 @@
-<h1> Photo Timeline</h1>
+<h1>Personal Photo</h1>
 <%= link_to 'New Post', new_post_path %>
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post,index| %>
 	<p class='title'>Title: <%= post.title %></p></br>
 	<p id= "image"><%= image_tag post.image.url %></p></br>
+        <div class="vote" id=<%=post.id%>>
+          <p>buy : <%=@post_meta[index]["buy"]%>
+             nbuy : <%=@post_meta[index]["nbuy"]%> </p>
+        </div>
 	<%= button_to "delete", post, :method=>:delete, :class=>:destroy %>
+
 <% end %>

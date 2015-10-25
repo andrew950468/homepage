@@ -11,7 +11,7 @@ function startTimer(duration, display) {
         seconds = (diff % 61) | 0;
 
         //minutes = minutes < 10 ? "0" + minutes : minutes;
-        /seconds = seconds < 10 ? "0" + seconds : seconds;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = seconds; 
 
