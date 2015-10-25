@@ -11640,6 +11640,35 @@ return jQuery;
   };
 
 }).call(this);
+$(document).ready(function(){
+    $(".buy").unbind("click").click(function(){
+        $.post("/posts/comment",
+        {
+          comment: { buy: true,
+                     post_id: $(this).attr("value")}
+        },
+        function(data,status){
+            //alert("post Data: " + data + "\nStatus: " + status);
+            $.post("/posts/buyCount",
+            {
+              comment: { post_id: data}
+            },
+            function(data,status){
+                //alert("get data buy: " + JSON.parse(data)["post_id"] + "\nStatus: " + status);
+                data_array = JSON.parse(data);
+                post_id = data_array["post_id"]
+                buy = data_array["buy"]
+                nbuy = data_array["nbuy"]
+                html_string = "buy : "+buy+", don't buy : "+nbuy
+                $("#"+post_id).html(html_string);
+            });
+        });
+    });
+});
+(function() {
+
+
+}).call(this);
 (function() {
 
 
@@ -11657,7 +11686,7 @@ function startTimer(duration, display) {
         seconds = (diff % 61) | 0;
 
         //minutes = minutes < 10 ? "0" + minutes : minutes;
-        /seconds = seconds < 10 ? "0" + seconds : seconds;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = seconds; 
 
@@ -11672,44 +11701,16 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
-jQuery(function ($) {
-    var oneMinutes = 60,
-        display = $('#time');
-    startTimer(oneMinutes, display);
-});
-function startTimer(duration, display) {
-    var start = Date.now(),
-        diff,
-        seconds;
-    function timer() {
-        // get the number of seconds that have elapsed since 
-        // startTimer() was called
-        diff = duration - (((Date.now() - start) / 1000) | 0);
-
-        // does the same job as parseInt truncates the float
-        seconds = (diff % 61) | 0;
-
-        //minutes = minutes < 10 ? "0" + minutes : minutes;
-        //seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = seconds; 
-
-        if (diff <= 0) {
-            // add one second so that the count down starts at the full duration
-            // example 05:00 not 04:59
-            start = Date.now() + 1000;
-        }
-    };
-    // we don't want to wait a full second before the timer starts
-    timer();
-    setInterval(timer, 1000);
-}
 
 jQuery(function ($) {
     var oneMinutes = 60,
-        display = $('#time');
+        display = $("#time");
     startTimer(oneMinutes, display);
 });
+(function() {
+
+
+}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
