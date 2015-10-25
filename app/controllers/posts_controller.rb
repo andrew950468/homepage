@@ -19,8 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @user = User.find(params[:id])
-    @post.user_id = @user.id
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
