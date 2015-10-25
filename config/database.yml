@@ -22,4 +22,10 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: mysql
+  host: wtwdb.c7p7yocslxoc.us-west-2.rds.amazonaws.com
+  reconnect: true
+  database: wtwdb
+  username: WTW
+  password: wtwdb2015
+
