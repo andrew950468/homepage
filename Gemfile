@@ -13,8 +13,7 @@ group :production do
   gem 'rails_12factor'
   gem 'aws-sdk'
 end
-  gem 'mysql'
-  gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

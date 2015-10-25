@@ -21,7 +21,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
   adapter: mysql2
   host: wtwdb.c7p7yocslxoc.us-west-2.rds.amazonaws.com
   reconnect: true
