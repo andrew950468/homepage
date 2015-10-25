@@ -7,7 +7,7 @@ Rails.application.configure do
       :domain         => 'puanyang.com',
       :authentication => :plain,
   }
-  
+  PAPERCLIP_FILE_PATH = ":rails_root/app/assets/images/:id"  
   ActionMailer::Base.delivery_method = :smtp
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

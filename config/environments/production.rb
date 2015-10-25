@@ -82,12 +82,21 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_host_name => 's3-us-west-2.amazonaws.com',
   :url => "https://s3-us-west-2.amazonaws.com/",
-
+  
   :s3_credentials => {
     :bucket => ENV['S3_BUCKET_NAME'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-  
+   PAPERCLIP_FILE_PATH = "/:class/:attachment/:id_partition/:style/:filename/:id"
+   ActionMailer::Base.smtp_settings = {
+      :port           => 587,
+      :address        => 'smtp.mailgun.org',
+      :user_name      => 'what_to_wear@puanyang.com',
+      :password       => '123456',
+      :domain         => 'puanyang.com',
+      :authentication => :plain,
+  }
+ 
 end
