@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
 	has_attached_file :image, :styles => { :large => "600x600>" },
-                  	:url  => ":id",
+                  	:url  => "s3-us-west-2.amazonaws.com",
                   	:path => '/:class/:attachment/:id_partition/:style/:filename/:id'
   validates :image,
     attachment_content_type: { content_type: /\Aimage\/.*\Z/ },
