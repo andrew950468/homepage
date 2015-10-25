@@ -6,11 +6,9 @@ class UserController < ApplicationController
     @post_meta=[]
     meta = {"buy"=> 0, "nbuy"=> 0}
     @posts.each do |post|
-      if Comment.find_by_post_id(post.id)
-        Comment.where(post_id: post.id).find_each do |c|
-          meta["buy"] += 1 if c.buy
-          meta["nbuy"] += 1 unless c.buy
-        end
+      Comment.where(post_id: post.id).find_each do |c|
+        meta["buy"] += 1 if c.buy
+        meta["nbuy"] += 1 unless c.buy
       end
       @post_meta.push meta
     end
