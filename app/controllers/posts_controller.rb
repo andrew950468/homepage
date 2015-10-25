@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     pass_params = post_params
     pass_params["user"] = current_user
     @post = Post.create(pass_params)
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created'}

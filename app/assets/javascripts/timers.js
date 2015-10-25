@@ -11,7 +11,7 @@ function startTimer(duration, display) {
         seconds = (diff % 61) | 0;
 
         //minutes = minutes < 10 ? "0" + minutes : minutes;
-        /seconds = seconds < 10 ? "0" + seconds : seconds;
+        //seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = seconds; 
 
@@ -26,9 +26,8 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
-
 jQuery(function ($) {
     var oneMinutes = 60,
-        display = $("#time");
+        display = $('#time');
     startTimer(oneMinutes, display);
 });
