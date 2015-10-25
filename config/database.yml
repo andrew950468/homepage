@@ -11,7 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  #database: db/development.sqlite3
+  adapter: "mysql2"
+  host: "wtw-db.c7p7yocslxoc.us-west-2.rds.amazonaws.com"
+  reconnect: true
+  database: "wtwdb"
+  username: "wtw"
+  password: "wtwdb2015"
+  port: 3306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,10 +28,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: mysql2
-  host: wtwdb.c7p7yocslxoc.us-west-2.rds.amazonaws.com
+  adapter: "mysql2"
+  host: "wtw-db.c7p7yocslxoc.us-west-2.rds.amazonaws.com"
   reconnect: true
-  database: wtwdb
-  username: WTW
-  password: wtwdb2015
+  database: "wtwdb"
+  username: "wtw"
+  password: "wtwdb2015"
+  port: 3306
 
